@@ -5,7 +5,7 @@ function appendValue(value) {
 }
 
 function clearDisplay() {
-  display.value = '';
+  display.value = "";
 }
 
 function deleteLast() {
@@ -14,8 +14,9 @@ function deleteLast() {
 
 function calculate() {
   try {
-    display.value = eval(display.value);
+    let expression = display.value.replace(/%/g, "/100");
+    display.value = eval(expression);
   } catch {
-    display.value = 'Error';
+    display.value = "Error";
   }
 }

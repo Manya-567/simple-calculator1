@@ -1,79 +1,70 @@
-/* Apply full-screen centered layout */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0;
-  background: linear-gradient(to right, #74ebd5, #9face6);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f0f0;
+  font-family: sans-serif;
 }
 
-/* Calculator container */
 .calculator {
-  background: #ffffff;
-  padding: 25px 20px;
-  border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  width: 270px;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* Display field */
 #display {
   width: 100%;
   height: 50px;
-  margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 24px;
   text-align: right;
+  margin-bottom: 10px;
   padding: 10px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-sizing: border-box;
-  background-color: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  background-color: #444;
+  color: white;
 }
 
-/* Button grid */
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
 }
 
-/* Button styling */
 button {
-  padding: 18px;
-  font-size: 18px;
-  background-color: #4b6cb7;
-  color: white;
+  height: 60px;
+  font-size: 20px;
   border: none;
-  border-radius: 12px;
+  border-radius: 5px;
+  background-color: #555;
+  color: white;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #3a539b;
-  transform: scale(1.05);
+  background-color: #666;
 }
 
-/* Special styling for clear/delete/operator buttons */
-button:nth-child(1),
-button:nth-child(2),
-button:nth-child(3),
-button:nth-child(4),
-button:nth-child(16) {
-  background-color: #e74c3c;
-}
-
-button:nth-child(1):hover,
-button:nth-child(2):hover,
-button:nth-child(3):hover,
-button:nth-child(4):hover,
-button:nth-child(16):hover {
-  background-color: #c0392b;
-}
-
-/* Zero button spans two columns */
-button.zero {
+.zero {
   grid-column: span 2;
+}
+
+/* Style for operators including % */
+button:nth-child(4),
+button:nth-child(8),
+button:nth-child(12),
+button:nth-child(16),
+button:nth-child(20) {
+  background-color: #e67e22;
+}
+
+button:nth-child(4):hover,
+button:nth-child(8):hover,
+button:nth-child(12):hover,
+button:nth-child(16):hover,
+button:nth-child(20):hover {
+  background-color: #d35400;
 }
